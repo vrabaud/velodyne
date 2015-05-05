@@ -3,17 +3,18 @@ project(velodyne_pointcloud)
 
 set(${PROJECT_NAME}_CATKIN_DEPS
     angles
+    dynamic_reconfigure
     nodelet
-    pcl_ros
     roscpp
     roslib
     sensor_msgs
     tf
+    tf2_ros
     velodyne_driver
     velodyne_msgs)
 
 find_package(catkin REQUIRED COMPONENTS
-             ${${PROJECT_NAME}_CATKIN_DEPS} pcl_conversions)
+             ${${PROJECT_NAME}_CATKIN_DEPS} tf2_sensor_msgs)
 find_package(Boost COMPONENTS signals)
 
 # Resolve system dependency on yaml-cpp, which apparently does not
